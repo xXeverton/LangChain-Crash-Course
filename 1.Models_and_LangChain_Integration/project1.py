@@ -4,8 +4,10 @@ from langchain.chains import LLMChain, SequentialChain
 from dotenv import load_dotenv
 import argparse
 
+# Secure the api_key
 load_dotenv()
 
+# With this you can those another language and another tasks before execute
 parser = argparse.ArgumentParser()
 parser.add_argument("--task", default="return a list of numbers")
 parser.add_argument("--language", default="python")
