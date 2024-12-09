@@ -1,4 +1,4 @@
-from langchain_groq import ChatGroq
+from langchain_groq.chat_models import ChatGroq
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 from dotenv import load_dotenv
