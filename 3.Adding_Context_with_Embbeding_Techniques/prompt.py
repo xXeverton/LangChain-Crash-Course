@@ -1,4 +1,4 @@
-from langchain.vectorstores.chroma import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_groq import ChatGroq
@@ -10,6 +10,7 @@ load_dotenv()
 chat = ChatGroq(temperature=0, model_name="mixtral-8x7b-32768")
 
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
 db = Chroma(
     persist_directory="emb",
     embedding_function=embeddings,
