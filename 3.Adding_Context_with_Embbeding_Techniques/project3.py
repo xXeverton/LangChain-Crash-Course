@@ -37,8 +37,10 @@ for doc in docs:
 """
 
 """
-results = db.similarity_search_with_relevance_scores("What is an interesting fact about the English language?",
-                                                     k=2)
+results = db.similarity_search_with_relevance_scores(
+    "What is an interesting fact about the English language?",
+    k=2
+    )
 
 
 for result in results:
