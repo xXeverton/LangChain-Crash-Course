@@ -2,8 +2,11 @@ from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_groq import ChatGroq
+from redundant_filter_retriever import RedundantFilterRetriver
 from dotenv import load_dotenv
+import langchain
 
+langchain.debug  = True
 
 load_dotenv()
 
@@ -17,7 +20,11 @@ db = Chroma(
 )
 
 
-retriever = db.as_retriever()
+# retriever = db.as_retriever()
+retriever = RedundantFilterRetriver(
+    embeddings=embeddings,
+    chroma=db
+)
 
 chain = RetrievalQA.from_chain_type(
     llm=chat,

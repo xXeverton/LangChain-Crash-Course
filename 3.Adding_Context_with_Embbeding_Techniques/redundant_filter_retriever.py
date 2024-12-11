@@ -1,10 +1,12 @@
 from langchain.embeddings.base import Embeddings
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain.schema import BaseRetriver
+from langchain.schema import BaseRetriever
 
 
-class RedundantFilterRetriver(BaseRetriver):
+# code to use Chroma to find relevant docs
+# and remove any duplicate records
+class RedundantFilterRetriver(BaseRetriever):
     embeddings: Embeddings
     chroma: Chroma
 
@@ -21,3 +23,4 @@ class RedundantFilterRetriver(BaseRetriver):
         )
     
     async def aget_relevant_documents(self):
+        return []

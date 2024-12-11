@@ -16,7 +16,7 @@ text_splitter = CharacterTextSplitter(
     chunk_overlap=100,    # this copy one part of the chunk before crated, in future we'll use this more
 )
 
-loader = TextLoader("facts.txt")        # to load the file
+loader = TextLoader("C:/Users/evertonmilitao/OneDrive - puc-rio.br/Cursos Qualificação Online/LangChain, ChatGPT/LangChain-Crash-Course/3.Adding_Context_with_Embbeding_Techniques/facts.txt")    # to load the file
 # docs = loader.load()        # To extract all the content of the file
 docs = loader.load_and_split(
     text_splitter=text_splitter,
